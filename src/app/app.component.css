@@ -1,0 +1,14 @@
+#wrapper {
+  display: grid;
+  grid-template-rows: 50px calc(100vh - 50px);
+}
+
+#content {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 30px;
+}
+
+router-outlet {
+  display: none;
+}
