@@ -1,11 +1,12 @@
 #wrapper {
   display: grid;
-  grid-template-rows: 50px calc(100vh - 50px);
+  grid-template-rows: 50px calc(100vh - 130px);
+  padding: 40px;
 }
 
 #content {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-gap: 30px;
 }
 

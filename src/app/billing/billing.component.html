@@ -1,1 +1,13 @@
 <p>billing works!</p>
+
+<label>
+  Priority:
+  <input #input type="number" min="0" max="9" [value]="0" />
+</label>
+
+<button type="button" (click)="addCard(input.ref, template)">Add Card with Subject</button>
+<button type="button" (click)="removeCard$.next()">Remove Card with Subject</button>
+
+<ng-template #template>
+  <p>{{ timer$ | async }}</p>
+</ng-template>

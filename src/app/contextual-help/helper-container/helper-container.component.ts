@@ -1,4 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { selectHelperCards } from '../../root-store/helper-store/selector';
+import { Card } from '../../root-store/helper-store/model';
 
 @Component({
   selector: 'app-helper-container',
@@ -6,11 +9,12 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./helper-container.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HelperContainerComponent implements OnInit {
+export class HelperContainerComponent {
+  cards$ = this.store.pipe(select(selectHelperCards));
 
-  constructor() { }
+  constructor(private store: Store<any>) {}
 
-  ngOnInit() {
+  trackByFn(index: number, card: Card) {
+    return card.timestamp;
   }
-
 }

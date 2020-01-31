@@ -1,0 +1,11 @@
+<h1>{{ title }}</h1>
+
+<div>
+  <ng-container *ngIf="contentString">
+    {{ contentString }}
+  </ng-container>
+
+  <ng-container *ngIf="contentTemplate">
+    <ng-container *ngTemplateOutlet="contentTemplate; context: getContext()"></ng-container>
+  </ng-container>
+</div>

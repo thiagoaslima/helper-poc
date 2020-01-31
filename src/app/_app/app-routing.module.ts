@@ -5,12 +5,12 @@ const routes: Routes = [
   {
     path: 'billing',
     loadChildren: () =>
-      import('./billing/billing.module').then(m => m.BillingModule)
+      import('../billing/billing.module').then(m => m.BillingModule)
   },
   {
     path: 'product',
     loadChildren: () =>
-      import('./product/product.module').then(m => m.ProductModule)
+      import('../product/product.module').then(m => m.ProductModule)
   }
 ];
 
